@@ -7,12 +7,12 @@ angular.module('LunchCheck', [])
 LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
   //$scope.dishes = "enter comma seperated dishes";
-  $scope.lunchMessage = "some message";
+  $scope.lunchMessage = "";
 
   $scope.checkDishes = function () {
   	console.log("got dishes = " + $scope.dishes);
   	if ($scope.dishes == null || $scope.dishes == "") {
-  		$scope.lunchMessage = "Please enter data first";
+  		$scope.lunchMessage = "Please enter data first !";
   	} else {
   		var res = $scope.dishes.split(",");
   		console.log("Got array length = " + res.length);
