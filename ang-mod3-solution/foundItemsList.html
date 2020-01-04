@@ -1,0 +1,12 @@
+ <div class="matches">
+    <h2>{{foundItemsDirectiveController.myTitle}}</h2>
+    <ul>
+      <li ng-repeat="item in foundItemsDirectiveController.matchItems">
+        {{ item.name }} [{{item.short_name}}] {{item.description}}
+        <button class="btn btn-default" ng-click="foundItemsDirectiveController.onRemove({index: $index});;"><span class="glyphicon glyphicon-remove"></span> Don't want this one!</button>
+      </li>
+    </ul>
+
+    <div ng-if="foundItemsDirectiveController.matchItems.length===0" class="error">{{foundItemsDirectiveController.myError}}</div>
+    </div>
+  </div>  
