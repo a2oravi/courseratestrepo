@@ -13,13 +13,15 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // *** Set up UI states ***
   $stateProvider
 
-  // Home page
+  // Home page refers to home template 
+  // has a link to display categories 
   .state('home', {
     url: '/',
     templateUrl: 'src/menuapp/templates/home.template.html'
   })
 
-  // Categories component 
+  // Categories state refers to categories template 
+  // shows list of categories using the categories component  
   .state('categories', {
     url: '/categories',
     templateUrl: 'src/menuapp/templates/categories.template.html',
@@ -36,10 +38,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     }
   })
 
-  // items component - items in the selected category 
+  // items state  - items in the selected category 
+  // refers to items template 
+  // shows list of items in partucular category using the items componen
   .state('items', {
     url: '/items-list/{shortName}',
-    templateUrl: 'src/Menuapp/templates/items.template.html',
+    templateUrl: 'src/menuapp/templates/items.template.html',
     controller: 'ItemListController as itemList',
     resolve: {
       categoryItems: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
